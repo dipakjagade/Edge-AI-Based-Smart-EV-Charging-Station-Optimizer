@@ -6,6 +6,10 @@
 [![Vite](https://img.shields.io/badge/Vite-5.4+-646CFF.svg)](https://vitejs.dev/)
 [![Scikit-Learn](https://img.shields.io/badge/scikit--learn-1.5+-F7931E.svg)](https://scikit-learn.org/)
 [![Tests](https://img.shields.io/badge/pytest-19%20passed-brightgreen.svg)](https://docs.pytest.org/)
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?logo=github)](https://github.com/dipakjagade/Edge-AI-Based-Smart-EV-Charging-Station-Optimizer)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+> 🔗 **GitHub Repository:** https://github.com/dipakjagade/Edge-AI-Based-Smart-EV-Charging-Station-Optimizer
 
 An enterprise-grade, edge-deployable software platform that predicts electric vehicle charging demand and dynamically optimizes electrical power distribution across concurrent EV charging stalls.
 
