@@ -1,0 +1,43 @@
+# Environment & Virtual Environments
+venv/
+.venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Node & Frontend
+node_modules/
+frontend/node_modules/
+frontend/dist/
+.npm
+npm-debug.log*
+package-lock.json
+
+# Databases & Runtime Data
+backend/data/db_fallback/
+backend/data/uploads/
+*.db
+*.sqlite3
+
+# Large binary ML model (regenerate with: python backend/ml/train_model.py)
+backend/saved_models/*.joblib
+
+# Temp npm artifacts from workspace root
+npm.tgz
+package/
+
+# IDE & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log
+
+# Sensitive Files
+.env
+*.pem
+*.key

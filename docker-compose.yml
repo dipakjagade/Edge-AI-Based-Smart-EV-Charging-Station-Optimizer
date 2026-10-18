@@ -1,0 +1,57 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:7.0
+    container_name: edge_ev_mongodb
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - ev_network
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    container_name: edge_ev_backend
+    restart: always
+    ports:
+      - "8000:8000"
+    environment:
+      - HOST=0.0.0.0
+      - PORT=8000
+      - MONGODB_URI=mongodb://mongodb:27017
+      - DATABASE_NAME=smart_ev_charging_db
+      - STATION_CAPACITY_KW=150.0
+      - EDGE_MODE=true
+      - DEMO_MODE=true
+    depends_on:
+      - mongodb
+    volumes:
+      - ./backend/saved_models:/app/saved_models
+      - ./backend/data:/app/data
+    networks:
+      - ev_network
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    container_name: edge_ev_frontend
+    restart: always
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    networks:
+      - ev_network
+
+volumes:
+  mongo_data:
+
+networks:
+  ev_network:
+    driver: bridge
